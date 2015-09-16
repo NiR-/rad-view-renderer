@@ -10,19 +10,11 @@ use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 class ViewRendererExtension extends Extension
 {
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function load(array $config, ContainerBuilder $container)
     {
-        $loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
+        $loader = new YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
         $loader->load('services.yml');
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getAlias()
-    {
-        return 'knp_rad_view_renderer';
     }
 }
